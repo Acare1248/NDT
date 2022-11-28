@@ -1,0 +1,13 @@
+.table td {
+    padding: .1rem;
+    vertical-align: middle;
+}
+.table th {
+    padding: .1rem;
+    vertical-align: middle;
+}
+
+.reportfont{
+    font-size: .9rem;
+    text-align: center;
+}

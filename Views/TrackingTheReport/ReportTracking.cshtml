@@ -1,0 +1,109 @@
+@* @{ViewData["Title"] = "Computer List";} *@
+@model List<WebNDTIT01.Models.searchReport>
+
+  <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Report</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Report</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+     <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+          <div class="col-lg-12">
+            <div class="card card-primary">
+              <div class="card-header border-0">
+                 
+                <div class="d-flex justify-content-between">
+                  <h3 class="card-title">Report Status</h3>
+                </div>
+                @* <div id="printbar" style="margin-top: 10px;"></div> *@
+              </div>
+               <div class="card-body">
+                <form class="form-inline">
+                  <div class="form-group mb-2">
+                     
+                     <select class="form-control select2bs4" id="InputReportID" name="InputReportID" style="width: 100%">
+                    </select>
+                  </div>
+                  <div class="form-group mx-sm-3 mb-2">
+                   
+                    <div class="input-group date" id="reservationdate" data-target-input="nearest" >
+                        <input type="text" class="form-control datetimepicker-input" id="reservationdate"  data-target="#reservationdate" placeholder="Select Month"/>
+                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>
+                    </div>
+                  </div>
+                    <button id="submitSearchreport"  method="post" type="submit" class="btn btn-primary mb-2">Submit</button>
+                </form>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table id="trackreport" class="table table-bordered table-striped" style="padding:.25rem">
+                  </table>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+         <div class="container-fluid">
+          <div class="row">
+          <div class="col-lg-12">
+            <div class="card card-primary">
+
+               <div class="card-body">
+                  <h3 class="card-title">Report Details</h3>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table id="reportStatusDetails" class="table table-bordered table-striped" style="width:100%">
+                    <thead>
+            <tr>
+                <th>Date/Time</th>
+                <th>Detail</th>
+                <th>Status</th>
+                <th>-</th>
+                <th>-</th>
+                <th>-</th>
+            </tr>
+        </thead>
+                  </table>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      @section Scripts{
+        <script src="~/js/trackingreport/trackingreport.js"></script>
+        <script src="~/lib/datatables-rowsgroup/dataTables.rowsGroup.js"></script>
+        <script src="https://cdn.datatables.net/fixedcolumns/4.0.2/js/dataTables.fixedColumns.min.js"></script>
+          @* InputMask *@
+        <script src="~/lib/moment/moment.min.js"></script>
+        <script src="~/lib/inputmask/jquery.inputmask.min.js"></script>
+          @* Tempusdominus Bootstrap 4 *@
+        <script src="~/lib/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+        <script src="~/js/trackingreport/searchreport.js"></script>
+      }
+
+      @section Styles
+      {
+        <link href="~/lib/customcss/reportcalender.css" rel="stylesheet" type="text/css"/>
+          @*daterange picker*@
+        <link href="~/lib/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" type="text/css" >
+      }

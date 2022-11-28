@@ -1,0 +1,186 @@
+﻿@*model IEnumerable<WebNDTIT01.Models.TbComputerList>*@
+@*model IList<WebNDTIT01.Models.TbComputerList>*@
+
+@{ViewData["Title"] = "Home Page";}
+
+  <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">NDT-IT Dashboard</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard v3</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+<p></p>
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          
+          <div class="col-lg-6">
+            <!--<div class="card">
+              <div class="card-header border-0">
+                <div class="d-flex justify-content-between">
+                  <h3 class="card-title">Online Store Visitors</h3>
+                  <a href="javascript:void(0);">View Report</a>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="d-flex">
+                  <p class="d-flex flex-column">
+                    <span class="text-bold text-lg">820</span>
+                    <span>Visitors Over Time</span>
+                  </p>
+                  <p class="ml-auto d-flex flex-column text-right">
+                    <span class="text-success">
+                      <i class="fas fa-arrow-up"></i> 12.5%
+                    </span>
+                    <span class="text-muted">Since last week</span>
+                  </p>
+                </div>
+                <div class="position-relative mb-4">
+                  <canvas id="visitors-chart" height="200"></canvas>
+                </div>
+
+                <div class="d-flex flex-row justify-content-end">
+                  <span class="mr-2">
+                    <i class="fas fa-square text-primary"></i> This Week
+                  </span>
+
+                  <span>
+                    <i class="fas fa-square text-gray"></i> Last Week
+                  </span>
+                </div>
+              </div>
+            </div>-->
+            <!-- /.card -->
+            <!-- Computer not update table -->
+            <div class="card">
+              <div class="card-header border-0">
+                <p class="card-title" style="padding-right: 10px;">
+                  <span><i class="fas fa-exclamation-triangle" style="color:red" ></i></span>
+                <p> Warning</p>
+                <p><span id='NumberOfPCNotUpdate'></span> computers found with information older than 7 days..</p>
+                
+                 </div>
+                  <div id="printbar" style="margin-top: 10px;margin-left: 15px;"></div>
+                  <div class="card-body">
+                    <table id="tableComNOtUpdate" class="table table-bordered table-striped" style="width:100%">
+                      <thead>
+                          <tr>
+                            <th></th>
+                            <th >Computer Name </th>
+                            <th class="none">Operating System </th>
+                            <th class="none">Ostype </th>
+                            <th class="none">Computer-Manufacturer </th>
+                            <th class="none">Model </th>
+                            <th class="none">SerialNo </th>
+                            <th class="none">Cpu </th>
+                            <th class="none">Ram </th>
+                            <th>Asset No. </th>
+                            <th class="none">Network Type </th>
+                            <th>IP Address </th>
+                            <th class="none">Mac-Address </th>
+                            <th class="none">Domain </th>
+                            <th class="none">User Name </th>
+                            <th class="none">Lastname</th>
+                            <th class="none">Monitor-Manufacturer</th>
+                            <th class="none">Monitor-Model</th>
+                            <th class="none">Monitor-SerialNo</th>
+                            <th class="none">Monitor-Asset</th>
+                            <th>Last Update</th>
+                          </tr>
+                      </thead>
+                      <tfoot>
+                          <tr>
+                              <th></th>
+                              <th>ComputerName </th>
+                              <th>Os </th>
+                              <th>Ostype </th>
+                              <th>ComManufacturer </th>
+                              <th>ComModel </th>
+                              <th>ComSerialNo </th>
+                              <th>Cpu </th>
+                              <th>Ram </th>
+                              <th>AssetNo </th>
+                              <th>Nictype </th>
+                              <th>Ipadds </th>
+                              <th>MacAdds </th>
+                              <th>Domain </th>
+                              <th>UserName </th>
+                              <th>UserLastname</th>
+                              <th>MonitorManufacturer</th>
+                              <th>MonitorModel</th>
+                              <th>MonitorSerialNo</th>
+                              <th>MonitorAsset</th>
+                              <th>Last Update</th>
+                          </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+              </div>
+            </div>
+            </div>
+            <!-- Computer not update table -->
+            <!-- /.card -->
+          </div>
+          <!-- /.col-md-6 -->
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header border-0">
+                <div class="d-flex justify-content-between">
+                  <h3 class="card-title">Sales</h3>
+                  <a href="javascript:void(0);">View Report</a>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="d-flex">
+                  <p class="d-flex flex-column">
+                    <span class="text-bold text-lg">$18,230.00</span>
+                    <span>Sales Over Time</span>
+                  </p>
+                  <p class="ml-auto d-flex flex-column text-right">
+                    <span class="text-success">
+                      <i class="fas fa-arrow-up"></i> 33.1%
+                    </span>
+                    <span class="text-muted">Since last month</span>
+                  </p>
+                </div>
+                <!-- /.d-flex -->
+
+                <div class="position-relative mb-4">
+                  <canvas id="sales-chart" height="200"></canvas>
+                </div>
+
+                <div class="d-flex flex-row justify-content-end">
+                  <span class="mr-2">
+                    <i class="fas fa-square text-primary"></i> This year
+                  </span>
+
+                  <span>
+                    <i class="fas fa-square text-gray"></i> Last year
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </div>
+
+       @section Scripts{
+        <script src="~/js/computernotupdate.js"></script>
+        
+      }
