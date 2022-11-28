@@ -1,0 +1,149 @@
+﻿@*model IEnumerable<WebNDTIT01.Models.GetAll>*@
+@*model IList<WebNDTIT01.Models.GetAll>*@
+@{ViewData["Title"] = "Computer List";}
+
+  <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Computer List</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Computer List</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header border-0">
+                  <div class="d-flex justify-content-between">
+                    <h3 class="card-title">Computer List</h3>
+                     <h3 class="card-title text-right">
+                                <input type=checkbox id="showall"> show all
+                     </h3>
+                  </div>
+                        
+                    <div id="printbar" style="margin-top: 10px;"></div>
+                </div>
+                <div class="card-body">
+                  <table id="dt-ComputerList" class="table table-bordered table-striped" style="width:100%">
+                          <thead>
+                              <tr>
+                                <th></th>
+                                <th style="display:none;">ID </th>
+                                <th >Computer Name </th>
+                                <th class="none">Operating System </th>
+                                <th class="none">Ostype </th>
+                                <th class="none">Computer-Manufacturer </th>
+                                <th >Model </th>
+                                <th >SerialNo </th>
+                                <th class="none">Cpu </th>
+                                <th class="none">Ram </th>
+                                <th>Asset No. </th>
+                                <th class="none">Network Type </th>
+                                <th>IP Address </th>
+                                <th class="none">Mac-Address </th>
+                                <th class="none">Domain </th>
+                                <th class="none">User Name </th>
+                                <th class="none">Lastname</th>
+                                <th class="none">Monitor-Manufacturer</th>
+                                <th class="none">Monitor-Model</th>
+                                <th class="none">Monitor-SerialNo</th>
+                                <th class="none">Monitor-Asset</th>
+                                <th>Last Update</th>
+                                <th>Status</th>
+                              </tr>
+                          </thead>
+                          <tfoot>
+                              <tr>
+                                  <th></th>
+                                  <th style="display:none;">ID </th>
+                                  <th>ComputerName </th>
+                                  <th>Os </th>
+                                  <th>Ostype </th>
+                                  <th>ComManufacturer </th>
+                                  <th>ComModel </th>
+                                  <th>ComSerialNo </th>
+                                  <th>Cpu </th>
+                                  <th>Ram </th>
+                                  <th>AssetNo </th>
+                                  <th>Nictype </th>
+                                  <th>Ipadds </th>
+                                  <th>MacAdds </th>
+                                  <th>Domain </th>
+                                  <th>UserName </th>
+                                  <th>UserLastname</th>
+                                  <th>MonitorManufacturer</th>
+                                  <th>MonitorModel</th>
+                                  <th>MonitorSerialNo</th>
+                                  <th>MonitorAsset</th>
+                                  <th>Last Update</th>
+                                  <th>Status</th>
+                              </tr>
+                          </tfoot>
+                  </table>
+                </div>
+
+                    <form> <!--Modal form-->
+                        <div class="modal fade" id="ComputerStatusModal" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h3 class="modal-title">Update computer status.</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h5 class="text-center"></h5>
+                                          <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">ID</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="idcomputerList" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Computer Name</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="Computer-Name" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-4" for="filter">Status</label>
+                                            <div class="col-sm-8">
+                                                <select id="vStatus" class="form-control">
+                                                    <option value="1">Active</option>
+                                                    <option value="2">Spare</option>
+                                                    <option value="3">Obsolete</option>
+                                                    <option value="4">Stand-alone</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" id="update" value="Update" class="btn btn-default" data-dismiss="modal">Save</button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+                    </form>
+
+              </div><!--Card-->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      @section Scripts{
+        <script src="~/js/datatablecomputer.js"></script>
+        
+      }

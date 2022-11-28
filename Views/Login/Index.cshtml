@@ -1,0 +1,58 @@
+@model WebNDTIT01.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+  <div class="section">
+        <h2 class="page-header">Login</h2>
+    </div>
+
+<div class="row">
+    <div class="col-lg-4 offset-lg-4">
+        @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                @Html.LabelFor(m => m.Username)
+                @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "Username", required = "required" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password", required = "required" })
+            </div>
+
+            <button type="submit" class="btn btn-primary">Login</button>
+        }
+    </div>
+</div>
+
+
+<div>
+    <div class="section">
+        <h2 class="page-header">Login</h2>
+    </div>
+    <p>
+        Enter your Active Directory / LDAP credentials for the company domain. These should be
+        the same as what you use for our <code>@@our-company.com</code> e-mail, so if your address
+        is <code>vasya@our-company.com</code>, then your username is <code>vasya</code>.
+    </p>
+    <form class="crud" asp-controller="Account" asp-action="Login" method="post">
+       
+        <table class="listing">
+            <tr>
+                <th><label asp-for="Username"></label></th>
+                <td><input asp-for="Username" class="cool-input" /></td>
+            </tr>
+            <tr>
+                <th><label asp-for="Password"></label></th>
+                <td><input asp-for="Password" class="cool-input" /></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><button type="submit" class="nice-button small-nice-button">Sign-in</button></td>
+            </tr>
+        </table>
+    </form>
+</div>

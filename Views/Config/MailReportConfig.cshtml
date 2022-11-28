@@ -1,0 +1,250 @@
+
+@*@model List<WebNDTIT01.Models.EmailModel>*@
+@{ViewData["Title"] = "Report Config";}   
+@model List<WebNDTIT01.Models.TbConfigMailReport>
+  <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Setup Report</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Configurate</a></li>
+              <li class="breadcrumb-item active">Setup Report</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                  <form class="card card-primary h-100" id="ReportFormRegistation">
+                  <div class="card-header">
+                    <h3 class="card-title">Setup Report</h3>
+                  </div>
+                  <div class="card-body">
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <div class="form-group">
+                        <label for="InputReportName">Report Name</label>
+                        <input name="InputReportName" class="form-control" id="InputReportName" placeholder="Report Name">
+                          </div>
+                          </div>
+                          <div class="col-sm-6">
+                            <div class="form-group">
+                        <label for="InputEmailAddress">Email Address</label>
+                        <input type="email" name="InputEmailAddress" class="form-control" id="InputEmailAddress" placeholder="Email Address">
+                            </div>
+                        </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="InputEmailSubject" class="col-sm-3 col-form-label">Email Subject</label>
+                        <div class="col-sm-9">
+                          <input type="text" name="InputEmailSubject" class="form-control" id="InputEmailSubject" placeholder="Email Subject">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="InputGetKeyWFrom">Retrieve Keyword from :  </label>
+                       
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="radioKeyFrom" value="1">
+                                  <label class="form-check-label"> Subject </label>
+                                </div>
+                                <div class="fform-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="radioKeyFrom" value="2">
+                                  <label class="form-check-label"> Body </label>
+                                </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="InputKeywSuccess">Keyword</label>
+                        <input class="form-control" id="InputKeywSuccess" placeholder="Job Success Keyword">
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control" id="InputKeywFailed" placeholder="Job Failed Keyword">
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control" id="InputKeywWarning" placeholder="Job Warning Keyword">
+                      </div>
+                      <div class="form-group">
+                          <label for="InputGetKeyWFrom">Retrieve Keyword of devices from :  </label>
+                       
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="DeviceKeyFrom" value="1">
+                                  <label class="form-check-label"> Subject </label>
+                                </div>
+                                <div class="fform-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="DeviceKeyFrom" value="2">
+                                  <label class="form-check-label"> Body </label>
+                                </div>
+                      </div>
+                  </div>
+                  <div class="card-footer">
+                        <button id="submitReport" type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                    </form>
+              </div>
+              <div class="col-md-6">
+               
+                 <form class="card card-primary h-100" id="quickForm2">
+                  <div class="card-header">
+                    <h3 class="card-title">Setup Device and Types Of Job For Report</h3>
+                  </div>
+                      <div class="card-body">
+                        <div class="form-group">
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <div class="form-group">
+                            <label for="InputDeviceName">Device Name</label>
+                            <input name="InputDeviceName" class="form-control" id="InputDeviceName" placeholder="Device Name">
+                              </div>
+                              </div>
+                              <div class="col-sm-6">
+                                <div class="form-group">
+                            <label for="InputReportOfDevice">Report Name</label>
+                              <select class="form-control select2bs4" id="InputReportOfDevice" name="InputReportOfDevice" >
+                              </select>
+                                </div>
+                            </div>
+                            </div>
+                          </div>
+                          <!--<div class="form-group">
+                              <label for="InputGetKeyWFrom">Retrieve Keyword from :  </label>
+                                    <div class="form-check form-check-inline">
+                                      <input class="form-check-input" type="radio" name="radioDeviceKeyFrom" value="1">
+                                      <label class="form-check-label"> Subject </label>
+                                    </div>
+                                    <div class="fform-check form-check-inline">
+                                      <input class="form-check-input" type="radio" name="radioDeviceKeyFrom" value="2">
+                                      <label class="form-check-label"> Body </label>
+                                    </div>
+                          </div>-->
+                           <div class="form-group">
+                              <label for="InputGetKeyWFrom">Retrieve Keyword of devices from :  </label>
+                                    <div class="form-check form-check-inline">
+                                      <label class="form-check-label"> <p id="deviceKeyTitle"></p> </label>
+                                    </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="InputDeviceKeyw">Keyword</label>
+                            <input class="form-control" id="InputDeviceKeyw" name="InputDeviceKeyw" placeholder="Device Name Keyword">
+                          </div>
+                          <hr>
+        
+                        <div class="form-group">
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <div class="form-group">
+                                  <label for="InputTypesName">Types Name</label>
+                                  <input name="InputTypesName" class="form-control" id="InputTypesName" placeholder="Full, Incremental, CCTV Detected, etc.">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="InputGetKeyWFrom">Retrieve Keyword from :  </label>
+                                    <div class="form-check form-check-inline">
+                                      <input class="form-check-input" type="radio" name="radioTypesofJobKeyFrom" value="1">
+                                      <label class="form-check-label"> Subject </label>
+                                    </div>
+                                    <div class="fform-check form-check-inline">
+                                      <input class="form-check-input" type="radio" name="radioTypesofJobKeyFrom" value="2">
+                                      <label class="form-check-label"> Body </label>
+                                    </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="InputTypesKeyw">Keyword</label>
+                            <input class="form-control" id="InputTypesKeyw" name="InputTypesKeyw" placeholder="Types of Job Keyword">
+                          </div>
+                      </div>
+                      <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                      </div>
+                   </form>
+              </div>
+                <div class="col-md-12" style="margin-top: 20px;">
+                <div class="card">
+                  <div class="card-header border-0">
+                    <div class="d-flex justify-content-between">
+                      <h3 class="card-title">Report List</h3>
+                    </div>
+                      <div id="printbar" style="margin-top: 10px;"></div>
+                  </div>
+                  <div class="card-body">
+                    <table id="dtExample" class="table table-bordered table-striped" style="width:100%">
+                            <thead>
+                                <tr>
+                                  <th>No.</th>
+                                  <th>Report Name</th>
+                                  <th>Email Address</th>
+                                  <th>Email Subject</th>
+                                  <th>Retrieve Keyword from</th>
+                                  <!--<th>Success</th>
+                                  <th>Failed</th>
+                                  <th>Warning</th>-->
+                                  <th></th>    
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                  <th>No.</th>
+                                  <th>Report Name</th>
+                                  <th>Email Address</th>
+                                  <th>Email Subject</th>
+                                  <th>Retrieve Keyword from</th>
+                                   <!--<th>Success</th>
+                                  <th>Failed</th>
+                                  <th>Warning</th>-->
+                                  <th></th>    
+                                </tr>
+                            </tfoot>
+                    </table>
+                  </div>
+                   <!-- Modal -->
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog   modal-lg">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title">Select Approver</h3>
+                                </div>
+                                <div class="modal-body ">
+                                      <div class="table-responsive">
+                                    <!--<div id="popup">
+                                    </div>-->
+                                        <table class="table table-hover" id="example">
+                                          <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>email</th>
+                                            </tr>
+                                          </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                   <!-- <button type="button" id="mdfbtnclose" class="btn btn-primary" data-dismiss="modal">Close</button>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Modal -->
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+
+  @section Scripts{
+        <script src="~/js/validatefillupreportsetup.js"></script>
+        <script src="~/js/mailreport/retrievermaileport.js"></script>
+        <script src="~/js/submitReportmailConfig.js"></script>
+        <script src="~/js/submitDeviceReportmailConfig.js"></script>
+        <script src="~/js/checkreportduplicate.js"></script>
+      }

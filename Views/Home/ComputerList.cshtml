@@ -1,0 +1,192 @@
+﻿@*model IEnumerable<WebNDTIT01.Models.GetAll>*@
+@*model IList<WebNDTIT01.Models.GetAll>*@
+@{ViewData["Title"] = "Computer List";}
+
+  <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Computer List</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Computer List</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+     <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-header border-0">
+                 
+                <div class="d-flex justify-content-between">
+                  <h3 class="card-title">Computer List</h3>
+                </div>
+                  <div id="printbar" style="margin-top: 10px;"></div>
+              </div>
+              <div class="card-body">
+            <table id="example" class="table table-bordered table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                <th></th>
+                <th >Computer Name </th>
+                <th class="none">Operating System </th>
+                <th class="none">Ostype </th>
+                <th class="none">Computer-Manufacturer </th>
+                <th >Model </th>
+                <th >SerialNo </th>
+                <th class="none">Cpu </th>
+                <th class="none">Ram </th>
+                <th>Asset No. </th>
+                <th class="none">Network Type </th>
+                <th>IP Address </th>
+                <th class="none">Mac-Address </th>
+                <th class="none">Domain </th>
+                <th class="none">User Name </th>
+                <th class="none">Lastname</th>
+                <th class="none">Monitor-Manufacturer</th>
+                <th class="none">Monitor-Model</th>
+                <th class="none">Monitor-SerialNo</th>
+                <th class="none">Monitor-Asset</th>
+                <th>Last Update</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th></th>
+                <th>ComputerName </th>
+                <th>Os </th>
+                <th>Ostype </th>
+                <th>ComManufacturer </th>
+                <th>ComModel </th>
+                <th>ComSerialNo </th>
+                <th>Cpu </th>
+                <th>Ram </th>
+                <th>AssetNo </th>
+                <th>Nictype </th>
+                <th>Ipadds </th>
+                <th>MacAdds </th>
+                <th>Domain </th>
+                <th>UserName </th>
+                <th>UserLastname</th>
+                <th>MonitorManufacturer</th>
+                <th>MonitorModel</th>
+                <th>MonitorSerialNo</th>
+                <th>MonitorAsset</th>
+                <th>Last Update</th>
+            </tr>
+        </tfoot>
+    </table>
+         </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <!--    <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-header border-0">
+                <div class="d-flex justify-content-between">
+                  <h3 class="card-title">Computer List</h3>
+                </div>
+              </div>
+              <div class="card-body">
+                <table id="example" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>ComputerName </th>
+                    <th>AssetNo </th>
+                    <th>Os </th>
+                    <th>Ostype </th>
+                    <th>ComManufacturer </th>
+                    <th>ComModel </th>
+                    <th>ComSerialNo </th>
+                    <th>CpuModel </th>
+                    <th>Ramsize </th>
+                    <th>Nictype </th>
+                    <th>Ipadds </th>
+                    <th>MacAdds </th>
+                    <th>Domain </th>
+                    <th>UserName </th>
+                    <th>UserLastname</th>
+                    <th>MonitorManufacturer</th>
+                    <th>MonitorModel</th>
+                    <th>MonitorSerialNo</th>
+                    <th>MonitorAsset</th>
+                    <th>Last Update</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  @foreach (var item in Model)
+                      {
+                          <tr>
+                            <td>@item.ComputerName </td>
+                            <td>@item.AssetNo </td>
+                            <td>@item.Os </td>
+                            <td>@item.Ostype </td>
+                            <td>@item.ComManufacturer </td>
+                            <td>@item.ComModel </td>
+                            <td>@item.ComSerialNo </td>
+                            <td>@item.CpuModel </td>
+                            <td>@item.Ramsize </td>
+                            <td>@item.Nictype </td>
+                            <td>@item.Ipadds </td>
+                            <td>@item.MacAdds </td>
+                            <td>@item.Domain </td>
+                            <td>@item.UserName </td>
+                            <td>@item.UserLastname</td>
+                            <td>@item.MonitorManufacturer</td>
+                            <td>@item.MonitorModel</td>
+                            <td>@item.MonitorSerialNo</td>
+                            <td>@item.MonitorAsset</td>
+                            <td>@item.DataUpdate</td>
+                          </tr>
+                      }
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                    <th>ComputerName </th>
+                    <th>AssetNo </th>
+                    <th>Os </th>
+                    <th>Ostype </th>
+                    <th>ComManufacturer </th>
+                    <th>ComModel </th>
+                    <th>ComSerialNo </th>
+                    <th>CpuModel </th>
+                    <th>Ramsize </th>
+                    <th>Nictype </th>
+                    <th>Ipadds </th>
+                    <th>MacAdds </th>
+                    <th>Domain </th>
+                    <th>UserName </th>
+                    <th>UserLastname</th>
+                    <th>MonitorManufacturer</th>
+                    <th>MonitorModel</th>
+                    <th>MonitorSerialNo</th>
+                    <th>MonitorAsset</th>
+                    <th>Last Updat</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>-->
+
+      @section Scripts{
+        <script src="~/js/datatablecomputer.js"></script>
+        
+      }

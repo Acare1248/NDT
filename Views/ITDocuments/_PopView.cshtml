@@ -1,0 +1,41 @@
+ @model IEnumerable<ADPerson>
+ @*@model List<ADPerson>*@
+    
+    <table class="table table-sm" id="example">
+          <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">email</th>
+                
+            </tr>
+          </thead>
+         <tbody>
+            @* <tr>
+                <td>Name1</td>
+                <td>10-1-1997</td>
+                <td>20</td>
+              </tr>*@
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.Name</th>
+                    <th scope="row">@item.Email</th>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+
+@section Scripts{
+        <script>
+
+        var table= $('#example').DataTable();
+        var tableBody = '#example tbody';
+        
+        $(tableBody).on('click', 'tr', function () {
+        var cursor = table.row($(this));//get the clicked row
+        var data=cursor.data();// this will give you the data in the current row.
+    $('form').find("input[name='Name'][type='text']").val(data[0]);
+} );
+        </script>
+    }

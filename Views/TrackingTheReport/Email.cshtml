@@ -1,0 +1,30 @@
+@model List<WebNDTIT01.Models.EmailModel>
+@{ViewData["Title"] = "Computer List";}   
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>From</th>
+            <th>Subject</th>
+            <th>Date</th>
+            <th>Body</th>
+        </tr>
+        @foreach (EmailModel email in Model)
+        {
+            <tr>
+                <td>@email.MailID</td>
+                <td>@Html.Raw(email.From)</td>
+                <td>
+                    <a id="lnkView" href="#">@email.Subject</a>
+                    <span class="body" style="display: none">
+                        @Html.Raw(email.Body)
+                    </span>
+                </td>
+                <td>@email.DateSent</td>
+                <td>@email.Body</td>
+            </tr>
+        }
+    </table>
+    <div id="dialog" style="display: none">
+        <span id="body"></span>
+    </div>
