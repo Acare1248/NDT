@@ -15,7 +15,7 @@ namespace WebNDTIT01.Controllers
         /*[BindProperty]
         public int IdcomputerList { get; set; }
         [BindProperty]
-        public sbyte compStatus { get; set; }*/
+        public sbyte compStatus { get; set; }**/
 
         private readonly ndt_dbContext db;
         public InventoryListController(ndt_dbContext context)
